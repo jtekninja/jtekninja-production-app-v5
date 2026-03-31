@@ -100,7 +100,7 @@ async function start() {
   await connectDatabase();
   await verifyEmailTransport();
 
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`JTekNinja app running on port ${PORT}`);
   });
 }
