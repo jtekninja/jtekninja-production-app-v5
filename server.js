@@ -97,25 +97,20 @@ app.use((err, req, res, next) => {
 });
 
 function start() {
-  app.listen(PORT, "0.0.0.0", () => {
+  // START SERVER IMMEDIATELY (this fixes Render issue)
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`JTekNinja app running on port ${PORT}`);
   });
 
-  connectDatabase()
-    .then(() => {
-      console.log("Database connected");
-    })
-    .catch((error) => {
-      console.error("Database connection failed:", error);
-    });
+  // Connect DB (non-blocking)
+  connectDatabase().catch(err => {
+    console.error('Database failed:', err.message);
+  });
 
-  verifyEmailTransport()
-    .then(() => {
-      console.log("Email transport verified");
-    })
-    .catch((error) => {
-      console.error("Email transport verification failed:", error);
-    });
+  // Verify email (non-blocking)
+  verifyEmailTransport().catch(err => {
+    console.error('Email failed:', err.message);
+  });
 }
 
 process.on('uncaughtException', (error) => {
@@ -126,7 +121,4 @@ process.on('unhandledRejection', (reason) => {
   console.error('Unhandled Rejection:', reason);
 });
 
-start().catch((error) => {
-  console.error('Failed to start server:', error);
-  process.exit(1);
-});
+start();
