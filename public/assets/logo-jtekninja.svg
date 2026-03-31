@@ -1,0 +1,46 @@
+<svg width="620" height="220" viewBox="0 0 620 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="24" y1="22" x2="204" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1229"/>
+      <stop offset="1" stop-color="#142A5C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="76" y1="40" x2="190" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#59E8FF"/>
+      <stop offset="1" stop-color="#5B7CFF"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="258" y1="58" x2="560" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#9FB6FF"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="620" height="220" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="12" y="16" width="208" height="188" rx="38" fill="url(#bg)" stroke="#263F88" stroke-width="2"/>
+  <circle cx="116" cy="104" r="66" fill="#091121" stroke="#1A2E63" stroke-width="2"/>
+  <path d="M72 88C82 64 101 54 116 54C131 54 149 64 160 88L146 93C138 77 128 69 116 69C104 69 94 77 86 93L72 88Z" fill="url(#accent)"/>
+  <path d="M79 132C90 153 103 162 116 162C129 162 142 153 153 132L138 124C132 136 124 145 116 145C108 145 100 136 94 124L79 132Z" fill="url(#accent)"/>
+  <path d="M82 93C91 83 102 77 116 77C130 77 141 83 150 93C142 101 131 105 116 105C101 105 90 101 82 93Z" fill="#0E1730" stroke="#59E8FF" stroke-width="2"/>
+  <path d="M76 112C86 126 101 134 116 134C131 134 146 126 156 112C146 108 132 106 116 106C100 106 86 108 76 112Z" fill="#0E1730" stroke="#59E8FF" stroke-width="2"/>
+  <rect x="99" y="91" width="12" height="6" rx="3" fill="#D9F9FF"/>
+  <rect x="121" y="91" width="12" height="6" rx="3" fill="#D9F9FF"/>
+  <path d="M170 77L190 97L170 117L150 97L170 77Z" fill="url(#accent)" filter="url(#glow)"/>
+  <path d="M170 84L183 97L170 110L157 97L170 84Z" fill="#C4F8FF" opacity="0.7"/>
+  <path d="M31 60H54" stroke="#59E8FF" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <path d="M37 82H58" stroke="#59E8FF" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <path d="M28 142H57" stroke="#59E8FF" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <path d="M176 148H204" stroke="#59E8FF" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="55" cy="60" r="4" fill="#59E8FF"/>
+  <circle cx="58" cy="82" r="4" fill="#59E8FF"/>
+  <circle cx="59" cy="142" r="4" fill="#59E8FF"/>
+  <circle cx="204" cy="148" r="4" fill="#59E8FF"/>
+  <path d="M256 95H372" stroke="#3156B8" stroke-width="1.5" opacity="0.6"/>
+  <path d="M256 129H487" stroke="#3156B8" stroke-width="1.5" opacity="0.35"/>
+  <text x="252" y="100" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800" fill="url(#metal)" letter-spacing="1.5">JTEKNINJA</text>
+  <text x="256" y="140" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#59E8FF" letter-spacing="7">TECH</text>
+  <text x="256" y="172" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" fill="#9FB6FF" letter-spacing="1.4">FUTURISTIC SOFTWARE • ECOMMERCE • GROWTH</text>
+</svg>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <meta name="description" content="Sanjai Syamaprasad personal profile site for software, business experiments, and digital projects" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="luxury-body">
+  <header class="site-header luxury-header">
+    <div class="container nav-wrap luxury-nav-wrap">
+      <a class="brand" href="/">
+        <img src="/assets/logo-jtekninja.png" alt="JTekNinja logo" />
+      </a>
+      <nav class="nav luxury-nav">
+        <a href="/#about">About</a>
+        <a href="/#ventures">Focus</a>
+        <a href="/#stack">Capabilities</a>
+        <a href="/#contact">Contact</a>
+        <a class="nav-cta" href="/dashboard/login">Workspace</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <% if (flash) { %>
+      <div class="container flash-wrap">
+        <div class="flash <%= flash.type %>"><%= flash.message %></div>
+      </div>
+    <% } %>

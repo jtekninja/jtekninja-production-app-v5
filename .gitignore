@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# environment files
+.env
+.env.*
+!.env.example
+
+# logs
+logs/
+*.log
+npm-debug.log*
+
+# coverage / build
+coverage/
+dist/
+build/
+
+# sessions / temp
+sessions/
+.tmp/
+tmp/
+
+# editor + OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<section class="section luxury-login-section">
+  <div class="container auth-wrap">
+    <div class="card glass-card auth-card luxury-auth-card">
+      <p class="section-mini">Private access</p>
+      <h1>Dashboard Login</h1>
+      <p class="muted-copy">A private workspace for reviewing messages and activity from the site.</p>
+
+      <form action="/dashboard/login" method="POST" class="auth-form">
+        <label>Email
+          <input type="email" name="email" required />
+        </label>
+        <label>Password
+          <input type="password" name="password" required />
+        </label>
+        <button class="btn btn-primary" type="submit">Enter Dashboard</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

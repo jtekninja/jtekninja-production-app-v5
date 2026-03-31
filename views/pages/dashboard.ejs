@@ -1,0 +1,96 @@
+<%- include('../partials/header') %>
+
+<section class="section luxury-dashboard-section">
+  <div class="container dashboard-grid luxury-dashboard-grid">
+    <div class="dashboard-main-stack">
+      <div class="dashboard-hero card glass-card luxury-hero-card">
+        <div>
+          <p class="section-mini">Private Dashboard</p>
+          <h1>My Progress</h1>
+          <p class="muted-copy">A private workspace for reviewing messages, trends, and activity across the profile site.</p>
+        </div>
+        <form method="POST" action="/dashboard/logout">
+          <button class="btn btn-secondary" type="submit">Log Out</button>
+        </form>
+      </div>
+
+      <div class="dashboard-stat-grid">
+        <div class="stat-panel glass-card luxury-card">
+          <span>Total Messages</span>
+          <strong><%= metrics.leadCount %></strong>
+          <small>All submitted contacts</small>
+        </div>
+        <div class="stat-panel glass-card luxury-card">
+          <span>Today</span>
+          <strong><%= metrics.today %></strong>
+          <small>New contacts today</small>
+        </div>
+        <div class="stat-panel glass-card luxury-card">
+          <span>With Phone</span>
+          <strong><%= metrics.withPhone %></strong>
+          <small>Higher-intent conversations</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-side-stack">
+      <div class="card glass-card side-panel luxury-card">
+        <p class="section-mini">Status</p>
+        <div class="status-list">
+          <div class="status-item"><span>Inbox pipeline</span><strong>Ready</strong></div>
+          <div class="status-item"><span>Database</span><strong>Connected</strong></div>
+          <div class="status-item"><span>Site access</span><strong>Protected</strong></div>
+        </div>
+      </div>
+
+      <div class="card glass-card side-panel luxury-card">
+        <p class="section-mini">Notes</p>
+        <ul class="clean-list dashboard-list">
+          <li>Review new messages and respond quickly.</li>
+          <li>Track which topics come up most often.</li>
+          <li>Use this space as the private side of the profile site.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card glass-card table-card dashboard-table-card luxury-card">
+      <div class="table-headline">
+        <div>
+          <p class="section-mini">Inbox</p>
+          <h2>Latest Messages</h2>
+        </div>
+        <div class="table-badge luxury-badge">Private view</div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Interest</th>
+              <th>Submitted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (!leads.length) { %>
+              <tr><td colspan="5">No messages yet.</td></tr>
+            <% } %>
+            <% leads.forEach((lead) => { %>
+              <tr>
+                <td><strong><%= lead.name %></strong><br><small><%= lead.message %></small></td>
+                <td><%= lead.email %></td>
+                <td><%= lead.phone || '—' %></td>
+                <td><%= lead.businessInterest || '—' %></td>
+                <td><%= new Date(lead.createdAt).toLocaleString() %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
