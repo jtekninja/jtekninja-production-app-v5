@@ -96,13 +96,26 @@ app.use((err, req, res, next) => {
   });
 });
 
-async function start() {
-  await connectDatabase();
-  await verifyEmailTransport();
-
-  app.listen(PORT, '0.0.0.0', () => {
+function start() {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`JTekNinja app running on port ${PORT}`);
   });
+
+  connectDatabase()
+    .then(() => {
+      console.log("Database connected");
+    })
+    .catch((error) => {
+      console.error("Database connection failed:", error);
+    });
+
+  verifyEmailTransport()
+    .then(() => {
+      console.log("Email transport verified");
+    })
+    .catch((error) => {
+      console.error("Email transport verification failed:", error);
+    });
 }
 
 process.on('uncaughtException', (error) => {
